@@ -5,7 +5,6 @@
  * Returns the same shape regardless of `AUTH_MODE`:
  *   - mock  → reads/writes `useAuthStore` (Zustand + localStorage)
  *   - clerk → reads `useUser`/`useAuth` and wraps `useSignIn`/`useSignUp`
- *             (Clerk v7 Future API)
  *
  * UI components import this hook only — they never see Clerk or the mock
  * directly, so swapping modes is a single env-var change.
@@ -48,7 +47,7 @@ function useMockBridge(): UseAuthShape {
   return { user, isLoaded: hydrated, login, signup, signOut };
 }
 
-/* ───────────────────────── clerk bridge (v7 Future API) ───────────────────────── */
+/* ───────────────────────── clerk bridge ───────────────────────── */
 
 function useClerkBridge(): UseAuthShape {
   const { isLoaded: userLoaded, user: clerkUser } = useClerkUser();
@@ -61,11 +60,8 @@ function useClerkBridge(): UseAuthShape {
     async (email: string, password: string) => {
       if (!signIn) throw new Error('Auth not ready');
       const result = await signIn.create({ identifier: email, password });
-      if (result.error) {
-        throw new Error(result.error.message ?? 'Sign-in failed');
-      }
-      if (signIn.status === 'complete' && signIn.createdSessionId) {
-        await setActive({ session: signIn.createdSessionId });
+      if (result.status === 'complete' && result.createdSessionId) {
+        await setActive({ session: result.createdSessionId });
         return;
       }
       throw new Error('Additional verification required.');
@@ -85,11 +81,8 @@ function useClerkBridge(): UseAuthShape {
         lastName,
         username: input.username,
       });
-      if (result.error) {
-        throw new Error(result.error.message ?? 'Sign-up failed');
-      }
-      if (signUp.status === 'complete' && signUp.createdSessionId) {
-        await setActive({ session: signUp.createdSessionId });
+      if (result.status === 'complete' && result.createdSessionId) {
+        await setActive({ session: result.createdSessionId });
         return;
       }
       throw new Error(
