@@ -180,6 +180,16 @@ export function Footer() {
               >
                 Ankur Srivastav
               </a>
+              {' · '}
+              <a
+                href="https://ankurs.work"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="transition-colors hover:opacity-70"
+                style={{ color: 'var(--text)' }}
+              >
+                ankurs.work
+              </a>
             </p>
           </div>
           <Link

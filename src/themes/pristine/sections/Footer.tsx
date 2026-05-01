@@ -134,6 +134,16 @@ export function Footer() {
                 >
                   Ankur Srivastav
                 </a>
+                {' · '}
+                <a
+                  href="https://ankurs.work"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="transition-colors hover:opacity-70"
+                  style={{ color: 'var(--text)' }}
+                >
+                  ankurs.work
+                </a>
               </span>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
