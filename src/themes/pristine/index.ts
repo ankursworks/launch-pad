@@ -95,7 +95,10 @@ export { default as Signup } from './pages/Signup';
 export { default as StyleGuide } from './pages/StyleGuide';
 
 // --- Brand pages re-used from Helios for now ---
-export { Dashboard } from '@/themes/helios';
+// Both themes must expose the full page contract so swapping
+// `themes/active` is always drop-in. Pristine ships its own
+// Home/Login/Signup/StyleGuide and re-uses Helios for the rest.
+export { About, Dashboard } from '@/themes/helios';
 
 // --- Domain templates (core-owned) ---
 export {
