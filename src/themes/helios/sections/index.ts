@@ -1,0 +1,13 @@
+export { MarketingNav } from './MarketingNav';
+export { Hero } from './Hero';
+export { DashboardMockup } from './DashboardMockup';
+export { LogoCloud } from './LogoCloud';
+export { Features } from './Features';
+export { ProductivityPartner, AutomationAssistant } from './SplitFeatures';
+export { FeatureGrid } from './FeatureGrid';
+export { Integrations } from './Integrations';
+export { Pricing } from './Pricing';
+export { Testimonials } from './Testimonials';
+export { Blog } from './Blog';
+export { FAQ } from './FAQ';
+export { Footer } from './Footer';

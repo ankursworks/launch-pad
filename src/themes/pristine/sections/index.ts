@@ -1,0 +1,12 @@
+export { Hero } from './Hero';
+export { DashboardMockup } from './DashboardMockup';
+export { MarketingNav } from './MarketingNav';
+export { LogoCloud } from './LogoCloud';
+export { Features } from './Features';
+export { Benefits } from './Benefits';
+export { Integration } from './Integration';
+export { Pricing } from './Pricing';
+export { Testimonial } from './Testimonial';
+export { CtaBanner } from './CtaBanner';
+export { Footer } from './Footer';
+export { StripedBand } from './StripedBand';

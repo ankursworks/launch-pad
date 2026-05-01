@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default values match the currently-active theme (Pristine).
+   `applyTokens()` overrides these via JS at runtime — these are only
+   the first-paint fallback before hydration. If you swap the active
+   theme via `npm run setup`, regenerate this file or update by hand. */
+:root {
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --panel: #F4F6FA;
+  --text: #111928;
+  --muted: #747B87;
+  --primary: #111928;
+  --primary-contrast: #FFFFFF;
+  --accent: #3758F9;
+  --border: #E8EBF0;
+
+  --font-family: var(--font-inter-tight), var(--font-sans), system-ui, sans-serif;
+  --font-display-family: var(--font-inter-tight), var(--font-sans), system-ui, sans-serif;
+
+  --btn-radius: 1.8rem;
+  --btn-weight: 600;
+  --btn-padding-x: 1.375rem;
+  --btn-padding-y: 0.75rem;
+
+  --input-radius: 0.75rem;
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.75rem;
+
+  --card-radius: 1.25rem;
+  --card-shadow: none;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+body {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-display-family);
+}
+
+/* Continuous horizontal scroll for marquee/logo strips. The inner track
+   is duplicated so translating -50% lands the second copy exactly where
+   the first started — seamless loop. */
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 30s linear infinite;
+}
+
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-x {
+    animation: none;
+  }
+}
+
+/* Hide scrollbar while keeping overflow scrollable (used by testimonial track). */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
