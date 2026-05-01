@@ -118,10 +118,24 @@ export function Footer() {
               borderColor: 'color-mix(in srgb, var(--text) 8%, transparent)',
             }}
           >
-            <span className="text-xs" style={{ color: 'var(--muted)' }}>
-              © {new Date().getFullYear()} LaunchPad — Built with the Pristine
-              theme.
-            </span>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs" style={{ color: 'var(--muted)' }}>
+                © {new Date().getFullYear()} LaunchPad — Built with the Pristine
+                theme.
+              </span>
+              <span className="text-xs" style={{ color: 'var(--muted)' }}>
+                Built for the community by{' '}
+                <a
+                  href="https://ankurs.work"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="transition-colors hover:opacity-70"
+                  style={{ color: 'var(--text)' }}
+                >
+                  Ankur Srivastav
+                </a>
+              </span>
+            </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
               <Link
                 href="#privacy"

@@ -165,9 +165,23 @@ export function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 border-t"
           style={{ borderColor: 'var(--border)' }}
         >
-          <p className="text-xs" style={{ color: 'var(--muted)' }}>
-            © {new Date().getFullYear()} LaunchPad. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center sm:items-start gap-1">
+            <p className="text-xs" style={{ color: 'var(--muted)' }}>
+              © {new Date().getFullYear()} LaunchPad. All rights reserved.
+            </p>
+            <p className="text-xs" style={{ color: 'var(--muted)' }}>
+              Built for the community by{' '}
+              <a
+                href="https://ankurs.work"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="transition-colors hover:opacity-70"
+                style={{ color: 'var(--text)' }}
+              >
+                Ankur Srivastav
+              </a>
+            </p>
+          </div>
           <Link
             href="#privacy"
             className="text-xs transition-colors hover:opacity-70"

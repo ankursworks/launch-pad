@@ -7,6 +7,20 @@
 Fork it. Replace the mock auth with your own Clerk account when you're
 ready. Wire your database. Ship.
 
+## Live demos — see both themes
+
+| **Helios** — warm, editorial | **Pristine** — clean, technical |
+| :---: | :---: |
+| [Open demo →](https://launch-pad-ankursrivastav99s-projects.vercel.app) | [Open demo →](https://launch-pad-git-pristine-ankursrivastav99s-projects.vercel.app) |
+| ![Helios theme](public/helios.png) | ![Pristine theme](public/pristine.png) |
+| Cream canvas, vermilion accent, Mincho serif | White canvas, electric-blue accent, Inter Tight |
+
+**Helios is active by default.** To switch to Pristine, either run `npm run setup` and pick interactively, or edit one line in [`src/themes/active/index.ts`](src/themes/active/index.ts):
+
+```ts
+export * from '../pristine';
+```
+
 ## Stack
 
 - **Next.js 14** (App Router) + **TypeScript** strict
